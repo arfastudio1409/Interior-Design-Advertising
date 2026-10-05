@@ -1,0 +1,1003 @@
+><!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARFA Studio | Interior Design, Custom Furniture & Aluminium</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arfa: {
+                            gold: '#C5A059',
+                            goldLight: '#E5C380',
+                            goldDark: '#967434',
+                            bronze: '#8C683B',
+                            dark: '#0D0E11',
+                            cardBg: '#15171E',
+                            border: '#282C37',
+                            sand: '#F5F2EC',
+                            wood: '#3A2E2B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0D0E11;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0D0 0%, #C5A059 50%, #967434 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C5A059, #8C683B, #15171E) 1;
+        }
+        .glass-card {
+            background: rgba(21, 23, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.15);
+        }
+        /* Architectural Grid Pattern Background */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0E11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333947;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+    </style>
+</head>
+<body class="bg-arfa-dark text-slate-200 antialiased bg-grid-pattern">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-card border-b border-arfa-border/50" id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 relative flex items-center justify-center">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-arfa-gold transition-transform duration-500 group-hover:scale-110">
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif-title text-2xl font-bold tracking-wider gold-gradient-text leading-none">ARFA STUDIO</span>
+                        <span class="text-[10px] tracking-[0.2em] text-slate-400 uppercase mt-1">Furniture & Aluminium</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-arfa-gold transition-colors">Tentang Kami</a>
+                    <a href="#services" class="text-slate-300 hover:text-arfa-gold transition-colors">Layanan & Produk</a>
+                    <a href="#portfolio" class="text-slate-300 hover:text-arfa-gold transition-colors">Portofolio</a>
+                    <a href="#workflow" class="text-slate-300 hover:text-arfa-gold transition-colors">Alur Kerja</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#contact" class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-arfa-gold to-arfa-bronze text-slate-950 font-semibold text-sm hover:brightness-110 transition-all shadow-lg shadow-arfa-gold/20 flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Konsultasi Gratis</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-arfa-gold p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-arfa-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-arfa-gold hover:bg-slate-800/50">Tentang Kami</a>
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-arfa-gold hover:bg-slate-800/50">Layanan & Produk</a> 
+            <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-arfa-gold hover:bg-slate-800/50">Portofolio</a>
+            <a href="#workflow" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-arfa-gold hover:bg-slate-800/50">Alur Kerja</a>
+            <a href="#appscript-info" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-arfa-gold hover:bg-slate-800/50">Fitur AppScript Integration</a>
+            <a href="#contact" class="block w-full text-center px-4 py-3 rounded-lg bg-gradient-to-r from-arfa-gold to-arfa-bronze text-slate-950 font-bold text-sm">
+                Hubungi Kami via WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+        <!-- Decorative Ambient Glows -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-arfa-gold/10 rounded-full filter blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-amber-700/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card text-arfa-gold text-xs font-semibold uppercase tracking-widest border border-arfa-gold/30">
+                        <i class="fas fa-gem text-xs"></i> Studio Interior & Alumunium
+                    </div>
+
+                    <h1 class="font-serif-title text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight text-white">
+                        "Crafting Timeless Space,<br/>
+                        <span class="gold-gradient-text italic">Created for Better Living"</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-light mx-auto lg:mx-0">
+                        Menghadirkan harmoni estetika artistik, material berkualitas tinggi, serta fungsi presisi untuk Rumah Tinggal,Perusahaan/Kantor, dan Outlet Brand.
+                    </p>
+
+                    <!-- Target Market Badges -->
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center lg:justify-start">
+                        <span class="px-3 py-1.5 rounded-md bg-slate-800/80 border border-slate-700 text-xs text-slate-300 flex items-center gap-2">
+                            <i class="fas fa-home text-arfa-gold"></i> Residensial & Villa
+                        </span>
+                        <span class="px-3 py-1.5 rounded-md bg-slate-800/80 border border-slate-700 text-xs text-slate-300 flex items-center gap-2">
+                            <i class="fas fa-building text-arfa-gold"></i> Perusahaan & Perkantoran
+                        </span>
+                        <span class="px-3 py-1.5 rounded-md bg-slate-800/80 border border-slate-700 text-xs text-slate-300 flex items-center gap-2">
+                            <i class="fas fa-store text-arfa-gold"></i> Outlet Commercial & Letter Sign
+                        </span>
+                    </div>
+
+                    <!-- Call to action buttons -->
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        </a>
+                        <a href="#portfolio" class="px-8 py-4 rounded-xl glass-card text-slate-200 font-semibold text-base hover:bg-slate-800/60 transition-all border border-slate-700 flex items-center justify-center gap-3">
+                            <i class="fas fa-images text-arfa-gold"></i>
+                            <span>Lihat Karya Kami</span>
+                        </a>
+                    </div>
+                </div>
+
+                        <!-- Floating Stat Badge -->
+                        <div class="absolute -top-6 -right-6 glass-card p-4 rounded-2xl border border-arfa-gold/40 hidden sm:flex items-center gap-3 shadow-xl">
+                            <div class="w-12 h-12 rounded-xl bg-arfa-gold/20 flex items-center justify-center text-arfa-gold text-xl font-bold">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <p class="text-lg font-bold text-white leading-none">100% Presisi</p>
+                                <p class="text-xs text-slate-400 mt-1">Material Kayu, Alumunium & UPVC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative bg-slate-950/60 border-y border-arfa-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Visual Material Card -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card p-8 rounded-3xl border border-arfa-gold/20 relative">
+                        <!-- Triangle Architectural Motif -->
+                             <img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-17-at-07-41-20-1.avif" 
+                            </svg>
+                        </div>
+
+                        <h3 class="font-serif-title text-3xl font-bold text-white mb-4">Mengenal ARFA Studio</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            ARFA Studio adalah usaha yang bergerak di bidang interior, dengan fokus menghadirkan produk dan solusi yang mengutamakan kualitas, desain modern, serta fungsionalitas jangka panjang.
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Kami percaya bahwa kenyamanan bukan hanya berasal dari produk yang indah dipandang, tetapi juga struktur fungsional dan material tahan lama. Menggabungkan karakter material kayu yang hangat, kokoh, serta struktur alumunium modern presisi.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+                            <div>
+                                <h4 class="text-2xl font-serif-title font-bold text-arfa-gold">BSD City</h4>
+                                <p class="text-xs text-slate-400">Tangerang Selatan, Banten</p>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-serif-title font-bold text-arfa-gold">100% Custom</h4>
+                                <p class="text-xs text-slate-400">Sesuai Dimensi Ruangan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Key Pillars & Target Segments -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold text-arfa-gold uppercase tracking-widest">Filosofi & Keunggulan</span>
+                        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mt-1">
+                            Solusi Interior Lengkap dari Konsep hingga Instalasi
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Pillar 1 -->
+                        <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-arfa-gold/40 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-arfa-gold/10 flex items-center justify-center text-arfa-gold mb-4 text-xl">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Desain & Layout Presisi</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Perencanaan visual 3D dan tata letak furniture disesuaikan akurat dengan ukuran serta karakteristik ruangan Anda.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-arfa-gold/40 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-arfa-gold/10 flex items-center justify-center text-arfa-gold mb-4 text-xl">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Fabrikasi Berstandar Tinggi</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Pembuatan custom furniture menggunakan material pilihan yang hangat dan kokoh.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-arfa-gold/40 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-arfa-gold/10 flex items-center justify-center text-arfa-gold mb-4 text-xl">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Tim Ahli Instalasi</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Pemasangan profesional di lapangan menjamin kerapihan, kekuatan, dan ketepatan waktu sesuai jadwal proyek.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-arfa-gold/40 transition-all">
+                            <div class="w-10 h-10 rounded-lg bg-arfa-gold/10 flex items-center justify-center text-arfa-gold mb-4 text-xl">
+                                <i class="fas fa-store-alt"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Spesialis Brand</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Pengalaman menangani gerai brand dan perusahaan nasional seperti Roti'O, AICE Ice Cream, dan Indofood.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold text-arfa-gold uppercase tracking-widest">Produk & Spesialisasi</span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-white mt-2">Layanan Utama ARFA Studio</h2>
+                <p class="text-slate-400 text-sm mt-4">Solusi terpadu custom furniture interior dan pekerjaan aluminium/UPVC.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Custom Furniture -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-52 relative overflow-hidden bg-slate-900">
+                        <img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-30-at-05-07-17.avif" alt="Kitchen Set & Furniture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-arfa-gold/90 text-slate-950 font-bold text-xs">Custom Furniture</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-serif-title text-2xl font-bold text-white">Kitchen Set & Interior</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Pembuatan modul dapur modern, kabinet presisi, dan meja bar serbaguna dengan pilihan finishing tahan panas & kelembapan.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Kitchen Set Modern & Classic</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Material Solid Plywood & HPL Premium</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Wardrobe & Storage -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-52 relative overflow-hidden bg-slate-900">
+                        <img src="<a href="https://ibb.co.com/mrgGsZxp"><img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-30-at-05-07-18.avif" alt="Wardrobe & Credenza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-arfa-gold/90 text-slate-950 font-bold text-xs">Living & Storage</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-serif-title text-2xl font-bold text-white">Wardrobe, Backdrop & Credenza</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Backdrop TV dengan pencahayaan LED terintegrasi, dan credenza multifungsi.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Custom Wardrobe & Walk-in Closet</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Backdrop Wall Panel & Accent Lights</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Credenza & Display Cabinet Kantor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Aluminium & UPVC Works -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all md:col-span-2 lg:col-span-1">
+                    <div class="h-52 relative overflow-hidden bg-slate-900">
+                        <img src="<a href="https://ibb.co.com/Zp6Fy5QF"><img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-30-at-05-07-19.avif" alt="Aluminium and UPVC" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-cardBg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-arfa-gold/90 text-slate-950 font-bold text-xs"> Aluminium</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-serif-title text-2xl font-bold text-white">Pintu & Jendela Alumunium / UPVC</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Solusi kusen, pintu sliding, serta jendela kedap suara berbahan aluminium kokoh dan UPVC berkualitas tinggi untuk hunian & gedung.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Pintu & Jendela Aluminium Minimalis</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Sistem UPVC Kedap Suara & Cuaca</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-arfa-gold"></i> Facade & Frameless Glass Partition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-semibold text-arfa-gold uppercase tracking-widest">Portofolio & Pengalaman</span>
+                    <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-white mt-2">ARFA Studio</h2>
+                </div>
+
+                <!-- Portfolio Filters -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+                    <button class="port-filter active px-4 py-2 rounded-xl text-xs font-semibold bg-arfa-gold text-slate-950" data-filter="all">Semua Proyek</button>
+                    <button class="port-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="retail">Brand & Retail Outlet</button>
+                    <button class="port-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="corporate">Perusahaan / Office</button>
+                    <button class="port-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="residential">Rumah Tinggal</button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                
+                <!-- Project 1: Roti'O -->
+                <div class="port-item retail glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-60 relative overflow-hidden bg-slate-900">
+                        <img src="<a href="https://ibb.co.com/XfB46hbj"><img src="https://i.ibb.co.com/Ngh3f8st/Whats-App-Image-2026-09-30-at-07-08-12.jpg" alt="Roti O Store Interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-dark via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-bold text-xs">Brand Retail</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-arfa-gold uppercase font-bold tracking-wider">RS Yarsi, St. Kalibata & SPBU Padalarang</span>
+                        <h3 class="font-serif-title text-2xl font-bold text-white">Roti 'O Outlet Store</h3>
+                        <p class="text-slate-400 text-xs">Pekerjaan interior booth retail, facade, acrylic letter sign, dan counter cabinet alumunium kayu.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: PT Indofood CBP -->
+                <div class="port-item corporate glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-60 relative overflow-hidden bg-slate-900">
+                        <img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-30-at-07-08-13.avif" alt="Indofood Office" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-dark via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-blue-500 text-white font-bold text-xs">Corporate Office</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-arfa-gold uppercase font-bold tracking-wider">Pabrik Jakarta</span>
+                        <h3 class="font-serif-title text-2xl font-bold text-white">PT. Indofood CBP Sukses Makmur Tbk</h3>
+                        <p class="text-slate-400 text-xs">Divisi Noodle - kabinet kantor fungsional.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3: AICE Ice Cream & Gelato Cake  -->
+                <div class="port-item retail glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-60 relative overflow-hidden bg-slate-900">
+                        <img src="<a href="https://ibb.co.com/W4G9YQJN"><img src="https://i.ibb.co.com/rRFP1grK/Whats-App-Image-2026-09-30-at-07-08-13-2.jpg" alt="AICE and Gelato Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-dark via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-rose-500 text-white font-bold text-xs">Brand Signage & Facade</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-arfa-gold uppercase font-bold tracking-wider">AICE Bekasi & One Meter Gelato PIK</span>
+                        <h3 class="font-serif-title text-2xl font-bold text-white">AICE & Gelato Cake PIK</h3>
+                        <p class="text-slate-400 text-xs">Pemasangan neon letter sign dan struktur outdoor facade alumunium.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4: Anggrek Loka Residence -->
+                <div class="port-item residential glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-60 relative overflow-hidden bg-slate-900">
+                        <img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-30-at-07-31-43.avif" alt="Anggrek Loka Residence" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-dark via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-bold text-xs">Residential</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-arfa-gold uppercase font-bold tracking-wider">BSD, Tangerang Selatan</span>
+                        <h3 class="font-serif-title text-2xl font-bold text-white">Anggrek Loka Residence</h3>
+                        <p class="text-slate-400 text-xs">Custom wardrobe ruang tidur utama, kitchen set modern, dan kusen jendela UPVC kedap suara.</p>
+                    </div>
+                </div>
+ 
+                <!-- Project 6: UPVC & Aluminium Custom  -->
+                <div class="port-item residential corporate glass-card rounded-3xl overflow-hidden border border-slate-800 group hover:border-arfa-gold/50 transition-all">
+                    <div class="h-60 relative overflow-hidden bg-slate-900">
+                        <img src="https://user38833.na.imgto.link/public/20260930/whatsapp-image-2026-09-30-at-07-08-14.avif" alt="UPVC Window and Door Installation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-arfa-dark via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-purple-500 text-white font-bold text-xs">Aluminium & UPVC</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-xs text-arfa-gold uppercase font-bold tracking-wider">Proyek Residensial & Perkantoran</span>
+                        <h3 class="font-serif-title text-2xl font-bold text-white">Pintu & Jendela UPVC Presisi</h3>
+                        <p class="text-slate-400 text-xs">Instalasi pintu lipat kaca alumunium tahan karat serta kusen UPVC berperforma insulasi termal.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="py-20 bg-slate-950 border-y border-arfa-border relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold text-arfa-gold uppercase tracking-widest">Tahapan Kerja</span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-white mt-2">Alur Kerja ARFA Studio</h2>
+                <p class="text-slate-400 text-sm mt-3">Proses terstruktur untuk menjamin kualitas hasil produk dari perancangan hingga serah terima.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 relative space-y-4 hover:border-arfa-gold/50 transition-all">
+                    <span class="text-4xl font-serif-title font-bold text-arfa-gold/30 absolute top-4 right-6">01</span>
+                    <div class="w-12 h-12 rounded-2xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-2xl">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-white">Konsultasi & Survey</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Diskusi kebutuhan, budget, serta pengukuran langsung dimensi lokasi oleh tim teknis kami.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 relative space-y-4 hover:border-arfa-gold/50 transition-all">
+                    <span class="text-4xl font-serif-title font-bold text-arfa-gold/30 absolute top-4 right-6">02</span>
+                    <div class="w-12 h-12 rounded-2xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-2xl">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-white">Perancangan Design</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Penyusunan gambar 3D visual, pemulihan layout, pilihan material HPL/Aluminium, dan penawaran harga resmi.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 relative space-y-4 hover:border-arfa-gold/50 transition-all">
+                    <span class="text-4xl font-serif-title font-bold text-arfa-gold/30 absolute top-4 right-6">03</span>
+                    <div class="w-12 h-12 rounded-2xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-2xl">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-white">Produksi & Fabrikasi</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Pembuatan furniture di workshop kami dengan standar kerapihan presisi dan kontrol bahan berkualifikasi tinggi.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 relative space-y-4 hover:border-arfa-gold/50 transition-all">
+                    <span class="text-4xl font-serif-title font-bold text-arfa-gold/30 absolute top-4 right-6">04</span>
+                    <div class="w-12 h-12 rounded-2xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-2xl">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-white">Instalasi & Finishing</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Pemasangan di lokasi oleh tim berpengalaman, penyesuaian detail akhir, dan pengecekan hasil akhir sesuai dengan kepuasan klien.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative bg-slate-950 border-t border-arfa-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Left -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold text-arfa-gold uppercase tracking-widest">Hubungi Kami</span>
+                        <h2 class="font-serif-title text-4xl font-bold text-white mt-1">Mulai Wujudkan Ruang Impian Anda</h2>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Tim teknis dan desainer ARFA Studio siap melayani konsultasi gratis untuk proyek interior hunian, kantor perusahaan, maupun retail brand outlet Anda.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-lg flex-shrink-0">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">WhatsApp Direct</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">+62 857 8128 7072</p>
+                                <a href="https://wa.me/6285781287072" target="_blank" class="text-xs text-arfa-gold hover:underline inline-block mt-1">Klik untuk Chat Langsung →</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-lg flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Email Studio</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">arfastudio1409@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-slate-800">
+                            <div class="w-10 h-10 rounded-xl bg-arfa-gold/10 flex items-center justify-center text-arfa-gold text-lg flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Alamat Workshop & Office</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">BSD City, Tangerang Selatan, Banten, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Right (Google Apps Script Enabled) -->
+                <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-arfa-gold/20">
+                    <h3 class="font-serif-title text-2xl font-bold text-white mb-2">Formulir Request Konsultasi</h3>
+                    <p class="text-xs text-slate-400 mb-6">Isi formulir berikut, data Anda akan diproses via Google Apps Script & WhatsApp.</p>
+
+                    <form id="consultationForm" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Nama Lengkap *</label>
+                                <input type="text" id="form-name" required placeholder="Contoh: Bpk. Hendra" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:border-arfa-gold focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Nomor WhatsApp / Telp *</label>
+                                <input type="tel" id="form-phone" required placeholder="0812xxxxxxx" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:border-arfa-gold focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Kategori Proyek</label>
+                                <select id="form-category" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:border-arfa-gold focus:outline-none">
+                                    <option value="Rumah Tinggal">Rumah Tinggal / Apartment</option>
+                                    <option value="Perusahaan / Office">Perusahaan / Perkantoran</option>
+                                    <option value="Outlet Brand Retail">Outlet Brand / Booth Retail</option>
+                                    <option value="Pintu Jendela UPVC">Pintu & Jendela UPVC/Aluminium</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Lokasi Proyek</label>
+                                <input type="text" id="form-location" placeholder="Contoh: BSD / Jakarta Selatan" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:border-arfa-gold focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Detail Kebutuhan / Ukuran Ruangan</label>
+                            <textarea id="form-message" rows="4" placeholder="Jelaskan kebutuhan Anda (misal: Kitchen set L-shape 3 meter, Wardrobe sliding 2.5 meter, dsb)..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:border-arfa-gold focus:outline-none"></textarea>
+                        </div>
+
+                        <!-- Feedback Message Box -->
+                        <div id="form-response" class="hidden p-3 rounded-xl text-xs font-medium"></div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                            <button type="submit" class="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-arfa-gold to-arfa-bronze text-slate-950 font-bold text-sm hover:brightness-110 transition-all shadow-lg flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Kirim via AppScript & Direct WA</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-arfa-dark border-t border-slate-800 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-800 pb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 text-arfa-gold">
+                        <svg viewBox="0 0 100 100" class="w-full h-full">  
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-serif-title font-bold text-white text-lg leading-none">ARFA STUDIO</p>
+                        <p class="text-[10px] text-slate-400">"Created for Better Living"</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-6 text-slate-300">
+                    <a href="#about" class="hover:text-arfa-gold">Tentang Kami</a>
+                    <a href="#services" class="hover:text-arfa-gold">Layanan</a>
+                    <a href="#visualizer" class="hover:text-arfa-gold">Visualizer</a>
+                    <a href="#portfolio" class="hover:text-arfa-gold">Portofolio</a>
+                    <a href="#contact" class="hover:text-arfa-gold">Kontak</a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+                <p>&copy; 2026 ARFA Studio. Interior, Custom Furniture & Aluminium Solution. All rights reserved.</p>
+                <p>BSD City, Tangerang Selatan | WhatsApp: +62 857 8128 7072</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Apps Script Modal -->
+    <div id="appsScriptModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-3xl w-full rounded-3xl border border-arfa-gold/40 p-6 space-y-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-code text-arfa-gold"></i>
+                    <h3 class="font-serif-title text-xl font-bold text-white">Google Apps Script Web App Code (.gs)</h3>
+                </div>
+                <button id="close-apps-script-modal" class="text-slate-400 hover:text-white p-2">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-300">
+                Salin kode Google Apps Script di bawah ini ke editor **Google Apps Script** (script.google.com) milik Google Sheets Anda, lalu Publish sebagai **Web App** dengan akses "Anyone". Tempelkan URL Web App ke variabel JavaScript `APPS_SCRIPT_URL` di website.
+            </p>
+
+            <div class="relative">
+                <pre class="bg-slate-900 p-4 rounded-xl text-[11px] font-mono text-emerald-400 overflow-x-auto border border-slate-800 select-all leading-relaxed">
+// Google Apps Script Backend for ARFA Studio
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    
+    // Append Form Entry row to Google Sheet
+    sheet.appendRow([
+      new Date(),
+      data.name,
+      data.phone,
+      data.category,
+      data.location,
+      data.message
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({
+      "result": "success",
+      "message": "Data berhasil tersimpan ke Google Sheets ARFA Studio"
+    })).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      "result": "error",
+      "error": error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}</pre>
+            </div>
+
+            <div class="flex justify-between items-center pt-2">
+                <button id="copy-script-btn" class="px-4 py-2 rounded-xl bg-arfa-gold text-slate-950 text-xs font-bold flex items-center gap-2 hover:brightness-110">
+                    <i class="fas fa-copy"></i> Copy Script
+                </button>
+                <button id="close-modal-btn" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs hover:text-white">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // --- 1. Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- 2. Portfolio Filter Logic ---
+        const filterBtns = document.querySelectorAll('.port-filter');
+        const portItems = document.querySelectorAll('.port-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-arfa-gold', 'text-slate-950');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                btn.classList.add('active', 'bg-arfa-gold', 'text-slate-950');
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+                portItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // --- 3. Interactive Room Canvas Visualizer & Cost Calculator ---
+        const configType = document.getElementById('config-type');
+        const areaSlider = document.getElementById('area-slider');
+        const areaVal = document.getElementById('area-val');
+        const estimatedCost = document.getElementById('estimated-cost');
+        const itemChecks = document.querySelectorAll('.item-check');
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        const canvasStatus = document.getElementById('canvas-status');
+        const canvas = document.getElementById('roomCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let currentTheme = 'warm-wood';
+
+        // Resize Canvas dynamically
+        function resizeCanvas() {
+            if (canvas.parentElement) {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+                drawRoomVisualizer();
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        // Theme Switcher
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                themeBtns.forEach(b => {
+                    b.classList.remove('active', 'border-arfa-gold', 'bg-arfa-gold/20', 'text-white');
+                    b.classList.add('border-slate-800', 'bg-slate-900', 'text-slate-400');
+                });
+                btn.classList.add('active', 'border-arfa-gold', 'bg-arfa-gold/20', 'text-white');
+                btn.classList.remove('border-slate-800', 'bg-slate-900', 'text-slate-400');
+                
+                currentTheme = btn.getAttribute('data-theme');
+                canvasStatus.innerText = 'Mode: ' + btn.innerText;
+                drawRoomVisualizer();
+            });
+        });
+
+        // Draw dynamic room visualizer on 2D HTML Canvas
+        function drawRoomVisualizer() {
+            if (!canvas.width || !canvas.height) return;
+            const w = canvas.width;
+            const h = canvas.height;
+
+            // Clear Canvas
+            ctx.clearRect(0, 0, w, h);
+
+            // Wall Background
+            ctx.fillStyle = currentTheme === 'modern-dark' ? '#181A20' : (currentTheme === 'minimalist-white' ? '#252932' : '#2A221E');
+            ctx.fillRect(0, 0, w, h);
+
+            // Floor Perspective Grid
+            const floorY = h * 0.65;
+            ctx.fillStyle = currentTheme === 'warm-wood' ? '#3D2B1F' : (currentTheme === 'modern-dark' ? '#111215' : '#1E222B');
+            ctx.fillRect(0, floorY, w, h - floorY);
+
+            // Floor lines
+            ctx.strokeStyle = 'rgba(197, 160, 89, 0.15)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x <= w; x += 30) {
+                ctx.beginPath();
+                ctx.moveTo(x, floorY);
+                ctx.lineTo(w / 2 + (x - w / 2) * 1.8, h);
+                ctx.stroke();
+            }
+
+            // Draw Selected Elements
+            const selectedItems = Array.from(itemChecks).filter(c => c.checked).map(c => c.value);
+
+            // 1. Draw Kitchen Set / Cabinet
+            if (selectedItems.includes('kitchen')) {
+                ctx.fillStyle = currentTheme === 'warm-wood' ? '#8C522B' : '#333947';
+                ctx.fillRect(w * 0.1, floorY - 90, w * 0.35, 90);
+
+                // Countertop
+                ctx.fillStyle = '#C5A059';
+                ctx.fillRect(w * 0.1 - 5, floorY - 95, w * 0.35 + 10, 8);
+
+                // Overhead Wall Cabinet
+                ctx.fillStyle = currentTheme === 'warm-wood' ? '#593318' : '#222733';
+                ctx.fillRect(w * 0.1, floorY - 210, w * 0.35, 80);
+
+                // LED strip accent
+                ctx.fillStyle = '#FFE699';
+                ctx.shadowColor = '#FFE699';
+                ctx.shadowBlur = 12;
+                ctx.fillRect(w * 0.1, floorY - 130, w * 0.35, 3);
+                ctx.shadowBlur = 0; // reset
+            }
+
+            // 2. Draw Wardrobe / Wall Cabinet
+            if (selectedItems.includes('wardrobe')) {
+                const wx = w * 0.52;
+                ctx.fillStyle = currentTheme === 'warm-wood' ? '#4A3323' : '#1F2430';
+                ctx.fillRect(wx, floorY - 220, w * 0.22, 220);
+
+                // Glass / UPVC Door frames
+                ctx.strokeStyle = '#C5A059';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(wx + 4, floorY - 216, (w * 0.22)/2 - 6, 212);
+                ctx.strokeRect(wx + (w * 0.22)/2 + 2, floorY - 216, (w * 0.22)/2 - 6, 212);
+            }
+
+            // 3. Draw Backdrop TV Panel
+            if (selectedItems.includes('backdrop')) {
+                const bx = w * 0.78;
+                ctx.fillStyle = '#201A17';
+                ctx.fillRect(bx, floorY - 180, w * 0.18, 140);
+
+                // TV Screen
+                ctx.fillStyle = '#090A0C';
+                ctx.fillRect(bx + 10, floorY - 160, w * 0.18 - 20, 80);
+
+                // Backlight LED
+                ctx.strokeStyle = '#C5A059';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(bx - 2, floorY - 182, w * 0.18 + 4, 144);
+            }
+
+            // 4. Draw UPVC / Aluminium Window Partition
+            if (selectedItems.includes('aluminium')) {
+                ctx.strokeStyle = '#E2E8F0';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(w * 0.05, 30, w * 0.9, floorY - 50);
+
+                // Window Grid Glass Line
+                ctx.strokeStyle = 'rgba(226, 232, 240, 0.3)';
+                ctx.beginPath();
+                ctx.moveTo(w * 0.5, 30);
+                ctx.lineTo(w * 0.5, floorY - 20);
+                ctx.stroke();
+            }
+        }
+
+        // Calculate Cost Logic
+        function calculateEstimate() {
+            const area = parseInt(areaSlider.value);
+            areaVal.innerText = area + ' m²';
+
+            const selectedCount = Array.from(itemChecks).filter(c => c.checked).length;
+            const type = configType.value;
+
+            let ratePerM2 = 2500000; // Base rate
+            if (type === 'corporate') ratePerM2 = 3200000;
+            if (type === 'retail') ratePerM2 = 3800000;
+
+            const baseCost = area * ratePerM2 * (0.8 + (selectedCount * 0.2));
+            const minCost = Math.round(baseCost * 0.85 / 1000000) * 1000000;
+            const maxCost = Math.round(baseCost * 1.25 / 1000000) * 1000000;
+
+            estimatedCost.innerText = `Rp ${minCost.toLocaleString('id-ID')} - Rp ${maxCost.toLocaleString('id-ID')}`;
+            drawRoomVisualizer();
+        }
+
+        // Event listeners
+        areaSlider.addEventListener('input', calculateEstimate);
+        configType.addEventListener('change', calculateEstimate);
+        itemChecks.forEach(chk => chk.addEventListener('change', calculateEstimate));
+
+        // Initial setup on window load
+        setTimeout(() => {
+            resizeCanvas();
+            calculateEstimate();
+        }, 300);
+
+        // --- 4. Send Config to WhatsApp ---
+        document.getElementById('send-config-wa').addEventListener('click', () => {
+            const projectType = configType.options[configType.selectedIndex].text;
+            const area = areaSlider.value;
+            const cost = estimatedCost.innerText;
+            const items = Array.from(itemChecks).filter(c => c.checked).map(c => c.parentElement.innerText.trim()).join(', ');
+
+            const text = `Halo ARFA Studio, saya ingin berkonsultasi mengenai perancangan interior.%0A%0A*Detail Simulasi Website:*%0A- Kategori: ${projectType}%0A- Estimasi Luas: ${area} m²%0A- Item Dibutuhkan: ${items || 'Custom'}%0A- Estimasi Anggaran: ${cost}%0A%0AMohon info jadwal survey dan konsultasi lebih lanjut. Terima kasih!`;
+            
+            window.open(`https://wa.me/6285781287072?text=${text}`, '_blank');
+        });
+
+        // --- 5. Consultation Form Handling & Google Apps Script Sync ---
+        const APPS_SCRIPT_URL = ""; // Optional deployment URL
+
+        const consultationForm = document.getElementById('consultationForm');
+        const formResponse = document.getElementById('form-response');
+
+        consultationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const category = document.getElementById('form-category').value;
+            const location = document.getElementById('form-location').value;
+            const message = document.getElementById('form-message').value;
+
+            formResponse.classList.remove('hidden', 'bg-red-500/20', 'text-red-300', 'bg-emerald-500/20', 'text-emerald-300');
+            formResponse.classList.add('bg-arfa-gold/20', 'text-arfa-gold');
+            formResponse.innerText = "Memproses dan menyiapkan pesan...";
+
+            // Submit to Google Apps Script Endpoint if provided
+            if (APPS_SCRIPT_URL && APPS_SCRIPT_URL.trim() !== "") {
+                try {
+                    await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, phone, category, location, message })
+                    });
+                } catch (err) {
+                    console.log('AppsScript Sync note:', err);
+                }
+            }
+
+            // Redirect to WhatsApp with pre-filled message
+            const waText = `Halo ARFA Studio, saya mengirim formulir konsultasi dari website ARFA Studio:%0A%0A*Nama:* ${name}%0A*No HP/WA:* ${phone}%0A*Kategori:* ${category}%0A*Lokasi:* ${location}%0A*Pesan/Kebutuhan:* ${message}`;
+            
+            formResponse.innerText = "Data siap! Mengalihkan ke WhatsApp ARFA Studio...";
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/6285781287072?text=${waText}`, '_blank');
+            }, 800);
+        });
+
+        // --- 6. Google Apps Script Modal Handlers ---
+        const openModalBtn = document.getElementById('open-apps-script-modal');
+        const closeModalBtn = document.getElementById('close-apps-script-modal');
+        const closeModalBtn2 = document.getElementById('close-modal-btn');
+        const appsScriptModal = document.getElementById('appsScriptModal');
+        const copyScriptBtn = document.getElementById('copy-script-btn');
+
+        openModalBtn.addEventListener('click', () => appsScriptModal.classList.remove('hidden'));
+        closeModalBtn.addEventListener('click', () => appsScriptModal.classList.add('hidden'));
+        closeModalBtn2.addEventListener('click', () => appsScriptModal.classList.add('hidden'));
+
+        copyScriptBtn.addEventListener('click', () => {
+            const codeText = document.querySelector('pre').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            copyScriptBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+                copyScriptBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Script';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
